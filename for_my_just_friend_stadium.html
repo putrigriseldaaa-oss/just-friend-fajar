@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FOR MY JUST FRIEND</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+:root{--gold:#e7c77b;--gold2:#b8944e;--ink:#07101f;--navy:#0b1930;--blue:#142b4b;--paper:#f7f3e9;--muted:#aebbd0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#050b16;color:#f8f5ed;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.display{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase}
+.topbar{position:fixed;z-index:20;top:0;left:0;right:0;height:64px;padding:0 clamp(18px,5vw,70px);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#050b16f2,#050b16b8);border-bottom:1px solid #e7c77b35;backdrop-filter:blur(14px)}
+.brand{font:800 17px 'Barlow Condensed';letter-spacing:.16em}.brand span{color:var(--gold)}
+.topmeta{font:600 10px 'DM Sans';letter-spacing:.2em;color:#c5cfdd}
+.hero{min-height:100svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden;padding:110px 20px 70px;background:radial-gradient(ellipse at 50% 73%,#1c4770 0,#102b4a 27%,#08172c 57%,#050b16 82%)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 8%,#ffffff04 8.1% 8.2%),linear-gradient(180deg,#02061188 0%,transparent 42%,#020611 100%)}
+.hero:after{content:"";position:absolute;left:0;right:0;bottom:-12%;height:48%;background:repeating-linear-gradient(0deg,#173c32 0 9px,#1e4b3c 10px 12px);border-radius:50% 50% 0 0;transform:perspective(500px) rotateX(-8deg);box-shadow:0 -20px 80px #6bb9e344}
+.light{position:absolute;top:7%;width:20%;height:48%;background:linear-gradient(180deg,#fff9d8aa,transparent);filter:blur(35px);opacity:.32;transform:rotate(18deg);animation:glow 4s ease-in-out infinite alternate}
+.light.l1{left:7%}.light.l2{right:7%;transform:rotate(-18deg);animation-delay:1s}
+.stadium-lines{position:absolute;bottom:0;left:50%;width:min(1000px,120vw);height:33%;transform:translateX(-50%);border:2px solid #ffffff2b;border-bottom:0;border-radius:50% 50% 0 0}
+.stadium-lines:before{content:"";position:absolute;left:50%;top:0;height:100%;border-left:1px solid #ffffff36}
+.ball{position:absolute;right:13%;bottom:20%;font-size:clamp(42px,7vw,82px);filter:drop-shadow(0 15px 18px #0009);animation:float 4s ease-in-out infinite}
+.hero-content{position:relative;z-index:2;max-width:900px}
+.eyebrow{font-size:10px;letter-spacing:.42em;color:var(--gold);font-weight:700}
+.hero h1{font:900 clamp(65px,13vw,150px)/.78 'Barlow Condensed';letter-spacing:-.025em;margin:28px 0 22px;text-shadow:0 14px 50px #000b}
+.hero h1 span{display:block;color:var(--gold);font-size:.78em;letter-spacing:.05em}
+.hero p{max-width:590px;margin:24px auto 30px;color:#d0d9e5;line-height:1.9;font-size:14px}
+.cta{border:1px solid #f2d994;background:linear-gradient(135deg,#f5dfaa,#b58d45);color:#111a28;padding:15px 27px;font:800 17px 'Barlow Condensed';letter-spacing:.16em;box-shadow:0 8px 35px #d6b66b35;transition:.25s}
+.cta:hover{transform:translateY(-4px);box-shadow:0 15px 45px #d6b66b55}
+.hero-note{margin-top:25px;color:#b6c5d7;font-size:9px;letter-spacing:.28em}
+main{max-width:1240px;margin:auto;padding:85px 22px 90px}
+.intro{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}
+.kicker{font-size:10px;letter-spacing:.3em;color:var(--gold);font-weight:700}
+.intro h2{font:800 clamp(40px,6vw,68px)/.9 'Barlow Condensed';margin:12px 0}
+.intro p{max-width:650px;color:#b8c5d6;font-size:13px;line-height:1.8;margin:0}
+.scoreboard{min-width:140px;padding:13px 20px;border:1px solid #e7c77b66;background:linear-gradient(145deg,#132746,#091427);text-align:center;box-shadow:0 10px 30px #0005}
+.scoreboard strong{display:block;font:900 38px 'Barlow Condensed';color:var(--gold)}
+.scoreboard small{font-size:9px;letter-spacing:.2em;color:#b7c5d7}
+.layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}
+.sidebar{position:sticky;top:82px;padding:18px;background:linear-gradient(155deg,#142a48,#091427);border:1px solid #e7c77b40;box-shadow:0 20px 50px #0005}
+.clubmark{display:flex;align-items:center;gap:12px;padding:5px 4px 18px;border-bottom:1px solid #ffffff20;margin-bottom:12px}
+.crest{width:48px;height:55px;display:grid;place-items:center;clip-path:polygon(8% 0,92% 0,88% 76%,50% 100%,12% 76%);background:linear-gradient(145deg,#f4e3ad,#b38b43);color:#14213a;font-size:25px}
+.clubmark b{font:800 22px 'Barlow Condensed';letter-spacing:.08em}.clubmark small{display:block;font-size:8px;letter-spacing:.2em;color:#b8c6d8;margin-top:3px}
+.chapter{width:100%;display:flex;align-items:center;gap:12px;padding:13px 10px;margin:4px 0;background:transparent;border:1px solid transparent;color:#e8edf4;text-align:left;transition:.2s}
+.chapter:hover,.chapter.active{background:#ffffff0c;border-color:#d8b96c70}
+.chapter .num{font:800 24px 'Barlow Condensed';color:var(--gold)}
+.chapter b{display:block;font:700 15px 'Barlow Condensed';letter-spacing:.05em}
+.chapter small{display:block;color:#9eacc0;font-size:9px;margin-top:3px}
+.chapter .tick{margin-left:auto;color:var(--gold);opacity:0}.chapter.done .tick{opacity:1}
+.panel{min-height:620px;background:linear-gradient(145deg,#132744f2,#091426f5);border:1px solid #e7c77b45;box-shadow:0 25px 70px #0007;position:relative;overflow:hidden}
+.panel:before{content:"";position:absolute;right:-90px;top:-110px;width:280px;height:280px;border:1px solid #e7c77b22;border-radius:50%;box-shadow:0 0 0 25px #e7c77b08,0 0 0 50px #e7c77b05;pointer-events:none}
+.panelhead{position:relative;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:23px 28px;border-bottom:1px solid #ffffff20}
+.panelhead h3{font:800 clamp(27px,4vw,40px)/.95 'Barlow Condensed';margin:7px 0 0}
+.minute{font:700 13px 'Barlow Condensed';letter-spacing:.13em;color:var(--gold);white-space:nowrap}
+.panelbody{position:relative;padding:27px 30px 30px}
+.scene-top{display:flex;align-items:center;gap:12px;margin-bottom:20px;color:#aebdd0;font-size:10px;letter-spacing:.2em}
+.scene-top:after{content:"";height:1px;background:#ffffff24;flex:1}
+.message-card{position:relative;max-width:780px;min-height:220px;margin:0 auto;padding:clamp(22px,4vw,38px);background:linear-gradient(135deg,#f8f4e9,#e9dfc8);color:#1a2636;box-shadow:0 18px 45px #0005;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
+.message-card:before{content:"";position:absolute;inset:9px;border:1px solid #b7985c66;pointer-events:none}
+.message-label{font:700 10px 'DM Sans';letter-spacing:.25em;color:#9b793d;margin-bottom:16px}
+.message-text{font:500 15px/2 'DM Sans';white-space:pre-wrap;position:relative;z-index:1}
+.message-text p{margin:0 0 15px}.message-text p:last-child{margin-bottom:0}
+.message-card.hidden-message{display:none}
+.reveal-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:22px auto 0;max-width:780px}
+.progress{font-size:10px;letter-spacing:.15em;color:#aebbd0}
+.next{border:1px solid #e7c77b88;background:linear-gradient(135deg,#e8ca83,#b28d4b);color:#111a28;padding:12px 20px;font:800 15px 'Barlow Condensed';letter-spacing:.13em;transition:.2s}
+.next:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.interaction{max-width:780px;margin:23px auto 0;padding:17px 19px;border:1px solid #ffffff24;background:#ffffff08}
+.interaction h4{font:700 20px 'Barlow Condensed';margin:0 0 11px;letter-spacing:.05em}
+.options{display:flex;gap:9px;flex-wrap:wrap}
+.option{padding:10px 14px;border:1px solid #ffffff38;background:#ffffff08;color:#edf1f5;font-size:11px;transition:.2s}
+.option:hover,.option.selected{border-color:var(--gold);color:var(--gold);background:#e7c77b12}
+.response{display:none;color:#f3d995;font-size:12px;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff24}
+.response.show{display:block;animation:fade .35s}
+.mini-pitch{height:92px;max-width:780px;margin:0 auto 22px;position:relative;overflow:hidden;border:1px solid #ffffff26;background:repeating-linear-gradient(90deg,#164c3b 0 12.5%,#1c5944 12.5% 25%)}
+.mini-pitch:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid #ffffff75}
+.mini-pitch:after{content:"";position:absolute;left:calc(50% - 35px);top:10px;width:70px;height:70px;border:1px solid #ffffff75;border-radius:50%}
+.kickball{position:absolute;z-index:2;left:12%;top:30px;font-size:30px;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.kickball.go{transform:translateX(min(65vw,500px)) rotate(720deg)}
+.stats-card{max-width:780px;margin:0 auto 22px;padding:20px;background:linear-gradient(110deg,#f1e4c3,#c6a96d);color:#15223a;display:flex;gap:17px;align-items:center}
+.stat-icon{font-size:42px}.stats-card h4{font:900 28px 'Barlow Condensed';margin:0}.stats-card p{font-size:9px;letter-spacing:.2em;margin:4px 0 10px}
+.stat-tags{display:flex;flex-wrap:wrap;gap:6px}.stat-tags span{font-size:8px;border:1px solid #25314d66;padding:5px 7px}
+.care-grid{max-width:780px;margin:0 auto 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.care{min-height:100px;border:1px solid #ffffff2b;background:linear-gradient(145deg,#173151,#0b1a30);color:#f5f0e5;padding:15px 8px;transition:.2s}
+.care:hover,.care.open{border-color:var(--gold);transform:translateY(-3px)}
+.care span{display:block;font-size:27px;margin-bottom:8px}.care b{font:700 14px 'Barlow Condensed';letter-spacing:.06em}
+.care-note{max-width:780px;margin:0 auto 20px;color:#aebbd0;font-size:11px;line-height:1.7}
+.end-card{max-width:780px;margin:24px auto 0;padding:25px;text-align:center;background:linear-gradient(120deg,#f5e5ba,#bd9b58);color:#17233a}
+.end-card small{font-size:9px;letter-spacing:.25em}.end-card h3{font:900 43px 'Barlow Condensed';margin:8px 0}.end-card p{font-size:10px;letter-spacing:.18em}
+footer{text-align:center;padding:30px 15px;color:#71839b;font-size:9px;letter-spacing:.22em;border-top:1px solid #ffffff12}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(10deg)}}
+@keyframes glow{from{opacity:.18}to{opacity:.42}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:repeat(2,1fr);gap:2px}.clubmark{grid-column:1/-1}.intro{align-items:start;flex-direction:column}.scoreboard{min-width:120px}.panel{min-height:600px}}
+@media(max-width:520px){.topmeta{display:none}.panelhead{padding:20px}.panelbody{padding:19px 15px 22px}.message-text{font-size:13px;line-height:1.9}.care-grid{grid-template-columns:repeat(2,1fr)}.chapter{padding:10px 7px}.chapter b{font-size:13px}.chapter small{font-size:8px}.ball{right:7%;bottom:12%}.hero h1{font-size:clamp(60px,17vw,95px)}.reveal-actions{align-items:flex-start;flex-direction:column}.next{width:100%}}
+
+.game-zone{max-width:780px;margin:22px auto 0;padding:19px;border:1px solid #e7c77b66;background:radial-gradient(circle at 90% 0,#d6b66b18,transparent 42%),#061326}
+.game-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.game-tag{font-size:9px;letter-spacing:.23em;color:var(--gold);font-weight:700}
+.game-title{font:800 25px 'Barlow Condensed';margin:4px 0}
+.game-desc{font-size:11px;line-height:1.7;color:#b8c5d6;margin:8px 0 14px}
+.game-buttons{display:flex;flex-wrap:wrap;gap:9px}
+.game-btn{min-width:88px;padding:12px 14px;border:1px solid #ffffff45;background:linear-gradient(145deg,#173451,#0c1b30);color:#f4f0e8;font:700 13px 'Barlow Condensed';letter-spacing:.08em;transition:.2s}
+.game-btn:hover{border-color:var(--gold);transform:translateY(-2px)}
+.game-btn.correct{background:linear-gradient(135deg,#f1d995,#b28d4b);color:#122038;border-color:#f1d995}
+.game-btn:disabled{opacity:.65;cursor:default;transform:none}
+.game-status{min-height:22px;margin-top:13px;color:#f2d995;font-size:11px;line-height:1.6}
+.game-progress{height:5px;background:#ffffff1c;margin-top:12px;overflow:hidden}
+.game-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#b58d45,#f5dfa3);transition:width .25s}
+.unlock-note{font-size:9px;color:#aab8ca;letter-spacing:.12em;margin-top:10px}
+
+
+/* MATCHDAY STADIUM REDESIGN */
+body{background:#030811}
+.hero{background:linear-gradient(180deg,#050d1c 0%,#102844 43%,#0b3029 100%);isolation:isolate}
+.hero:before{background:
+ radial-gradient(ellipse at 50% 8%,#fff8d477 0 1%,transparent 13%),
+ repeating-linear-gradient(90deg,transparent 0 3.1%,#dcecff0a 3.2% 3.3%),
+ linear-gradient(180deg,#071225 0%,#102947 48%,#123d31 100%)}
+.hero:after{display:none}
+.stadium-lines{z-index:0;bottom:-1%;height:43%;width:110%;border:2px solid #d9e8e755;border-bottom:0;border-radius:48% 48% 0 0;background:repeating-linear-gradient(0deg,#16432e 0 22px,#1b5037 23px 44px);box-shadow:inset 0 30px 45px #061b17}
+.hero .hero-content{z-index:5}
+.hero .stadium-crowd{position:absolute;z-index:1;left:-8%;right:-8%;bottom:24%;height:28%;background:
+ radial-gradient(circle,#e6d8b5 1px,transparent 1.8px) 0 0/9px 10px,
+ radial-gradient(circle,#a9c3d5 1px,transparent 1.8px) 4px 4px/11px 12px,
+ linear-gradient(180deg,#101d32,#0b1527);border-top:5px solid #8191a855;border-bottom:10px solid #050d18;transform:perspective(250px) rotateX(-8deg);opacity:.9}
+.hero .floodlight{position:absolute;z-index:2;top:7%;width:25%;height:54%;pointer-events:none;background:linear-gradient(180deg,#fffbdc88,transparent 75%);filter:blur(23px);opacity:.42}
+.hero .floodlight.left{left:0;transform:rotate(20deg)}.hero .floodlight.right{right:0;transform:rotate(-20deg)}
+.hero .light-rig{position:absolute;z-index:3;top:6%;width:150px;height:9px;border-radius:50%;background:#fff9dc;box-shadow:0 0 10px 5px #fff9dc,0 0 40px 18px #dcecffaa,0 0 100px 40px #dcecff44}
+.hero .light-rig.left{left:5%;transform:rotate(8deg)}.hero .light-rig.right{right:5%;transform:rotate(-8deg)}
+.hero .ball{z-index:5;right:15%;bottom:17%;font-size:clamp(50px,8vw,100px);animation:ballHover 3.5s ease-in-out infinite;filter:drop-shadow(0 18px 13px #000b)}
+.hero .ball:after{content:"";position:absolute;left:15%;right:15%;bottom:-12px;height:12px;background:#0009;filter:blur(7px);border-radius:50%}
+.matchday-scene{position:relative;height:230px;margin:0 0 25px;overflow:hidden;border:1px solid #d9bd7955;background:linear-gradient(180deg,#0a1c34,#12364a 60%,#15432e);box-shadow:0 18px 50px #0008}
+.matchday-scene .stands{position:absolute;inset:0 0 42% 0;background:
+ radial-gradient(circle,#f0dfb9 1px,transparent 1.9px) 0 0/9px 10px,
+ radial-gradient(circle,#a4bdd4 1px,transparent 1.8px) 4px 4px/11px 12px,
+ linear-gradient(180deg,#17243a,#0b1527);border-bottom:7px solid #d2b46b66}
+.matchday-scene .roof{position:absolute;top:0;left:-3%;right:-3%;height:28px;background:linear-gradient(#aab9c8,#26364a);clip-path:polygon(0 0,100% 0,92% 100%,8% 100%);box-shadow:0 5px 15px #0008}
+.matchday-scene .pitch{position:absolute;left:0;right:0;bottom:0;height:48%;background:repeating-linear-gradient(90deg,#145037 0 12.5%,#1b5b3d 12.5% 25%);border-top:2px solid #d7e6d2aa}
+.matchday-scene .pitch:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2px solid #f4f6e8aa}
+.matchday-scene .pitch:after{content:"";position:absolute;width:75px;height:75px;border:2px solid #f4f6e888;border-radius:50%;left:calc(50% - 37px);top:calc(50% - 37px)}
+.goal{position:absolute;z-index:3;right:7%;bottom:28%;width:112px;height:88px;border:5px solid #f4f3e8; border-bottom:0;transform:perspective(100px) rotateY(-8deg);background:repeating-linear-gradient(0deg,transparent 0 9px,#e9f0e977 10px),repeating-linear-gradient(90deg,transparent 0 9px,#e9f0e977 10px);filter:drop-shadow(0 4px 5px #0008)}
+.player-silhouette{position:absolute;z-index:4;bottom:24%;font-size:48px;filter:drop-shadow(0 5px 5px #0008);animation:playerRun 3.5s ease-in-out infinite}
+.player-silhouette.p1{left:18%}.player-silhouette.p2{left:43%;font-size:42px;animation-delay:.5s}.player-silhouette.p3{right:23%;font-size:44px;animation-delay:1s}
+.referee{position:absolute;z-index:5;left:62%;bottom:25%;font-size:42px;filter:drop-shadow(0 5px 5px #0009)}
+.supporter-flag{position:absolute;z-index:5;left:4%;bottom:27%;font-size:35px;animation:flagWave 1s ease-in-out infinite alternate}
+.supporter-flag.two{left:auto;right:3%;animation-delay:.4s}
+.scene-caption{position:absolute;z-index:6;left:16px;top:15px;padding:8px 12px;background:#050d1dd9;border-left:3px solid var(--gold);font:700 11px 'Barlow Condensed';letter-spacing:.16em;color:#f5e4b8}
+.match-hud{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 14px;background:#050d1e;border:1px solid #d9bd7945;margin-bottom:17px}
+.hud-team{display:flex;align-items:center;gap:9px;font:800 15px 'Barlow Condensed';letter-spacing:.06em}
+.hud-crest{width:30px;height:34px;display:grid;place-items:center;background:linear-gradient(145deg,#f5e3b0,#a7833f);color:#13213a;clip-path:polygon(8% 0,92% 0,86% 78%,50% 100%,14% 78%);font-size:15px}
+.hud-score{text-align:center;font:900 27px 'Barlow Condensed';color:var(--gold)}
+.hud-score small{display:block;font:600 8px 'DM Sans';letter-spacing:.18em;color:#aebbd0}
+.game-zone{background:linear-gradient(145deg,#0c2039,#071222);border:1px solid #e7c77b70;box-shadow:inset 0 0 35px #0005}
+.game-title{font-size:29px;letter-spacing:.04em}
+.game-btn{min-width:105px;min-height:70px;display:flex;align-items:center;justify-content:center;gap:8px;flex-direction:column;background:linear-gradient(145deg,#1b3957,#0a1a2e);border:1px solid #d8e4ed55;box-shadow:inset 0 1px #ffffff20,0 6px 12px #0005;font:800 15px 'Barlow Condensed';letter-spacing:.08em}
+.game-btn:before{content:"";width:24px;height:24px;border:1px solid #d6bd7d;border-radius:50%;background:radial-gradient(circle at 50% 50%,#e7c77b 0 3px,transparent 4px)}
+.game-btn.correct{background:linear-gradient(145deg,#f1d995,#b28d4b);color:#102039}
+.game-btn.correct:before{border-color:#15233a;background:radial-gradient(circle,#17233a 0 3px,transparent 4px)}
+.message-card{box-shadow:0 20px 40px #0008,0 0 0 1px #fff5}
+.chapter{position:relative}
+.chapter.active:before{content:"";position:absolute;left:-1px;top:8px;bottom:8px;width:3px;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+@keyframes playerRun{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+@keyframes flagWave{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+@keyframes ballHover{0%,100%{transform:translateY(0) rotate(-12deg)}50%{transform:translateY(-22px) rotate(18deg)}}
+@media(max-width:520px){.matchday-scene{height:190px}.player-silhouette{font-size:35px}.goal{width:80px;height:65px}.referee{font-size:32px}}
+
+</style>
+</head>
+<body>
+<div class="topbar"><div class="brand">FOR MY <span>JUST FRIEND</span></div><div class="topmeta">REAL MADRID EDITION · A SPECIAL MATCH</div></div>
+<header class="hero">
+<div class="light l1"></div><div class="light l2"></div><div class="stadium-lines"></div><div class="stadium-crowd"></div><div class="floodlight left"></div><div class="floodlight right"></div><div class="light-rig left"></div><div class="light-rig right"></div><div class="ball">⚽</div>
+<div class="hero-content">
+<div class="eyebrow">A SPECIAL MATCH · JUST FOR YOU</div>
+<h1>FOR MY <span>JUST FRIEND</span></h1>
+<p>A little stadium, a few match moments, and six chapters waiting to be opened. Take your time and enjoy every part of the game.</p>
+<button class="cta" onclick="enterMatch()">ENTER THE STADIUM&nbsp; ↗</button>
+<div class="hero-note">NO PRESSURE · JUST BE YOURSELF · ENJOY THE GAME</div>
+</div></header>
+<main id="match" hidden>
+<div class="matchday-scene">
+ <div class="roof"></div><div class="stands"></div><div class="pitch"></div>
+ <div class="scene-caption">LIVE FROM THE BERNABÉU · MATCHDAY ATMOSPHERE</div>
+ <div class="goal"></div><div class="player-silhouette p1">🏃🏻</div><div class="player-silhouette p2">🏃🏼</div><div class="player-silhouette p3">🏃🏻‍♂️</div><div class="referee">🧑🏻‍⚖️</div><div class="supporter-flag">🏳️</div><div class="supporter-flag two">📣</div>
+</div>
+<div class="match-hud"><div class="hud-team"><span class="hud-crest">RM</span> REAL MADRID</div><div class="hud-score"><span id="live-score">0 — 0</span><small>FRIENDLY MATCH · 90:00</small></div><div class="hud-team">JUST FRIEND <span class="hud-crest">★</span></div></div>
+<div class="intro"><div><div class="kicker">WELCOME TO YOUR SPECIAL MATCH</div><h2 class="display">THE MATCH IS YOURS.</h2><p>Pilih babak di samping. Pesannya akan terbuka satu per satu, seperti momen-momen kecil dalam pertandingan. Tidak perlu buru-buru.</p></div><div class="scoreboard"><strong id="score">00 / 06</strong><small>CHAPTERS OPENED</small></div></div>
+<div class="layout">
+<aside class="sidebar">
+<div class="clubmark"><div class="crest">⚽</div><div><b>REAL MADRID</b><small>THE SPECIAL MATCH</small></div></div>
+<button class="chapter active" onclick="openChapter(0)"><span class="num">01</span><span><b>THE WELCOME</b><small>00' · FIRST KICK</small></span><span class="tick">✓</span></button>
+<button class="chapter" onclick="openChapter(1)"><span class="num">02</span><span><b>JUST BE YOU</b><small>18' · NO PRESSURE</small></span><span class="tick">✓</span></button>
+<button class="chapter" onclick="openChapter(2)"><span class="num">03</span><span><b>HONESTY CHECK</b><small>35' · REAL TALK</small></span><span class="tick">✓</span></button>
+<button class="chapter" onclick="openChapter(3)"><span class="num">04</span><span><b>PLAYER STATS</b><small>55' · YOUR POTENTIAL</small></span><span class="tick">✓</span></button>
+<button class="chapter" onclick="openChapter(4)"><span class="num">05</span><span><b>WEEKEND MODE</b><small>75' · OFF THE PITCH</small></span><span class="tick">✓</span></button>
+<button class="chapter" onclick="openChapter(5)"><span class="num">06</span><span><b>FULL-TIME CARE</b><small>90' · FINAL WHISTLE</small></span><span class="tick">✓</span></button>
+</aside>
+<section class="panel">
+<div class="panelhead"><div><div class="kicker" id="chapter-kicker">CHAPTER 01 / FIRST KICK</div><h3 id="chapter-title">THE WELCOME</h3></div><div class="minute" id="minute">00' — 90'</div></div>
+<div class="panelbody" id="chapter-content"></div>
+</section></div></main>
+<footer>FULL TIME DOESN'T MEAN THE STORY ENDS · FOR MY JUST FRIEND</footer>
+<script>
+const chapters = [
+{kick:"CHAPTER 01 / FIRST KICK",title:"THE WELCOME",minute:"00' — 90'",label:"A LITTLE OPENING NOTE",parts:[
+"hiii sayanggg kuuu, selamat pagii",
+"ini iseng aja sih bikinnya, aku berusaha nyesuain sama yg kamu suka, maaf yaa kalau kurang sesuai",
+"first of thing, i wanna say tysm, karena kamu selalu menerima ngeluh ku, kamu tidak menghakimi ku, kamu tau posisi ku kalau aku cuma butuh seseorang pendengar buat kemarin malam, terimakasih banyak yaa",
+"celana mu pakabar? ru sure ur okay after kepreset?"
+],game:"QUICK CHECK: PLAYER STATUS",options:["I'm good, coach!","Need medical team"],responses:["Good to hear. Match continues!","Medical team on standby. Hope you're okay!"]},
+{kick:"CHAPTER 02 / NO PRESSURE",title:"JUST BE YOU",minute:"18' — 90'",label:"LOCKER ROOM TALK",parts:[
+"idk why, tiba² kamu kirim long text begitu yg terkait excited kek aku mikir anjay, kenape lu bang, tumben banget??? is there something wrong?",
+"tapi semisal kamu kek gitu karena sungkan atau apaa, ga perlu sih kak. aku memang belum tau kamu secara keseluruhan tapi semakin mengenal kamuu, semua hal tentang kamu itu sangat menyenangkan, just to be urself. aku malah lebih ga suka kamu melakukan sesuatu yg memang itu bukan kamu, karena itu bikin tidak nyaman kannn?",
+"euyyy aku tidak lihat kamu dari manapun kakk, kamu merespon ku dengan baik pun itu sudah cukup, i don't need anything else, terimakasih sudah menghargai aku, aku juga akan memperlakukan hal yg sama ke akakk",
+"justruuuu yg hidup nya flat harus punya partner kek aku yg gedebukan biar idup nya gonjang ganjing, tiba² nangis, tiba² gila",
+"it's okayyyy babeee, aku kan tidak mempermasalahkan kamu harus gini gitu, just be urself oteyyy"
+],game:"PILIH MODE PEMAINMU",options:["Be yourself","Try to impress"],responses:["No need to be anyone else. Just be you.","The best version is still the real you."]},
+{kick:"CHAPTER 03 / REAL TALK",title:"HONESTY CHECK",minute:"35' — 90'",label:"A LITTLE PAUSE",parts:[
+"aku lebih ga enak dan kepikiran kalau misalnya aslinya kamu ga nyaman sama aku",
+"tapi kamu pura² buat nerima dan paksa buat ngeladenin aku, sometimes i look like disturbing u right?",
+"terutama yg kamu pernah buat aku bener² kek nyuruh aku menjauh",
+"padahal kak, tanpa kamu minta aku bisa melakukan itu sendiri, aku bakal lakuin itu kalau aku bener² ingin pergi",
+"mau gimanapun kamu nyuruh aku pergi tapi aku gamau trs gimana? kecuali kamu jelasin kamu ga nyaman dan aku sangat mengganggu , i can handle it"
+],game:"HONESTY CHECK: COMMUNICATION MATTERS",options:["Absolutely.","I need time."],responses:["Honesty makes things clearer than guessing.","It's okay to take time."]},
+{kick:"CHAPTER 04 / PLAYER DEVELOPMENT",title:"YOUR PLAYER STATS",minute:"55' — 90'",label:"SCOUT REPORT",parts:[
+"then kamu kenapa kak, bahas excited sama kerja? menurut ku gada hubungannya sih, mungkin ada tapi tidak sebesar itu",
+"lebih ke skill kan yg dibutuhin? percuma kalau excited tapi ga punya skill, selagi kamu bisa kerja sama dalam tim, profesional dsb masih aman banget buat kerja",
+"menurut ku juga kamu sudah sangat oke sekali, kamu buktinya bisa jadi putra kimia, meskipun aku anak nya excited belum tentu juga aku bisa jadi putri mn kan?",
+"kamu tidak usah khawatir atau berfikir hal² yg tidak perlu begitu, percaya saja rencana nya tuhan itu pasti kerennn bangett, aku saja percaya kamu bisa sukses besar dan jadii olang yg keyennnn",
+"aku jadi yg se excited sekarang pun ga gampang kak, temen² deket ku aja bilang \"suangar yaa kamu sekarang, jadi kek orang yg beda\"",
+"karena aku nyoba buat keluar dari zona nyaman ku kak, meskipun begitu ada kok yg menganggap aku tetap pendiam, aku aslinya introvert anjayyy, pasti kamu ga percaya banget karena aku petakilan, gini² baterai ku gampang abisss yaa, soak"
+],game:"WHAT MAKES A GREAT PLAYER?",options:["Skills & teamwork","Excitement only"],responses:["Skills, teamwork, and learning all matter.","Excitement is one part of the journey."]},
+{kick:"CHAPTER 05 / OFF THE PITCH",title:"WEEKEND MODE",minute:"75' — 90'",label:"SUBSTITUTION · TIME TO ENJOY YOUR WEEKEND",parts:[
+"so yeahh, apapun itu jalani saja yg sekarang, i hope this weekend u can have fun with ur time, with ur family, I'll be a good girl, just text me if u need something",
+"siapa yg sangka kamu bakal bisa se liar itu kak wkwk, geleng². but i always excited and waiting for ur story about ur day, ur problem or anything else. everything about u"
+],game:"PILIH RENCANA WEEKEND",options:["Family time","Me time","Random adventure"],responses:["Enjoy your time with your family.","Take time to recharge too.","A little adventure sounds fun!"]},
+{kick:"CHAPTER 06 / FINAL WHISTLE",title:"FULL-TIME CARE",minute:"90' — FULL TIME",label:"A LITTLE CARE PACKAGE",parts:[
+"so yeahh, have fun for ur weekend, have a nice day, good luck, don't forget with ur breakfast, lunch and dinner then take a rest too, stay hydrated and take caree",
+"no need to say thanks, semoga semua doa baik selalu kembali ke kamu kak, aamiin, wyatb"
+],care:true}
+];
+let current=0,step=0,opened=new Set();
+function enterMatch(){document.getElementById('match').hidden=false;document.getElementById('match').scrollIntoView({behavior:'smooth'});openChapter(0)}
+function openChapter(i){current=i;step=0;opened.add(i);document.querySelectorAll('.chapter').forEach((b,n)=>{b.classList.toggle('active',n===i);b.classList.toggle('done',opened.has(n))});document.getElementById('score').textContent=String(opened.size).padStart(2,'0')+' / 06';document.getElementById('chapter-kicker').textContent=chapters[i].kick;document.getElementById('chapter-title').textContent=chapters[i].title;document.getElementById('minute').textContent=chapters[i].minute;renderChapter()}
+let gameComplete=false;
+let gameCount=0;
+function renderChapter(){
+ const c=chapters[current],root=document.getElementById('chapter-content');
+ gameComplete=false;gameCount=0;
+ let extra='';
+ if(current===0)extra='<div class="mini-pitch"><span class="kickball" id="kickball">⚽</span></div>';
+ if(current===3)extra='<div class="stats-card"><div class="stat-icon">⚽</div><div><h4>THE FUTURE STAR</h4><p>REAL MADRID · SPECIAL PLAYER</p><div class="stat-tags"><span>TEAMWORK ★★★★★</span><span>PROFESSIONALISM ★★★★★</span><span>POTENTIAL ∞</span></div></div></div>';
+ if(current===5)extra='<div class="care-grid"><div class="care"><span>🍳</span><b>BREAKFAST</b></div><div class="care"><span>🍱</span><b>LUNCH</b></div><div class="care"><span>🍲</span><b>DINNER</b></div><div class="care"><span>💧</span><b>STAY HYDRATED</b></div><div class="care"><span>💤</span><b>TAKE A REST</b></div><div class="care"><span>🤍</span><b>TAKE CARE</b></div></div>';
+ root.innerHTML=`<div class="scene-top">${c.label}</div>${extra}<div class="message-card" id="message-card"><div class="message-label">MESSAGE ${String(current+1).padStart(2,'0')} · PLAY ${String(step+1).padStart(2,'0')}</div><div class="message-text" id="message-text">${escapeHTML(c.parts[step])}</div></div><div class="game-zone" id="game-zone"></div><div class="reveal-actions"><div class="progress" id="progress">${step+1} / ${c.parts.length} MESSAGE MOMENTS</div><button class="next" id="next-btn" onclick="nextPart()" disabled>COMPLETE THE GAME FIRST 🔒</button></div>${current===5?'<div class="end-card"><small>FULL TIME · FINAL WHISTLE</small><h3>YOU DID GREAT.</h3><p>AND I’M ROOTING FOR YOU, ALWAYS.</p></div>':''}`;
+ renderMiniGame();
+}
+function renderMiniGame(){
+ const zone=document.getElementById('game-zone');
+ if(!zone)return;
+ let title='',desc='',buttons='';
+ if(current===0){
+   const target=['LEFT','CENTER','RIGHT'][step%3];
+   title='PENALTY SHOOTOUT';desc=`The goalkeeper is watching the ${target==='LEFT'?'right side':'left side'}... choose your shot and score!`;
+   buttons=['LEFT','CENTER','RIGHT'].map(x=>`<button class="game-btn" onclick="penalty('${x}','${target}',this)">${x} ⚽</button>`).join('');
+ }else if(current===1){
+   title='THE REAL YOU';desc='Which card should the player choose? Pick the message that feels most genuine.';
+   buttons=['BE YOURSELF','PRETEND','IMPRESS EVERYONE'].map((x,i)=>`<button class="game-btn" onclick="simpleGame(${i===0},this,'That’s the spirit. No need to pretend!')">${x}</button>`).join('');
+ }else if(current===2){
+   title='VAR: HONESTY CHECK';desc='A clear match needs clear communication. Pick the best move.';
+   buttons=['GUESS THE OTHER PERSON','KEEP IT INSIDE','BE HONEST'].map((x,i)=>`<button class="game-btn" onclick="simpleGame(${i===2},this,'Good call. Honest communication wins this round.')">${x}</button>`).join('');
+ }else if(current===3){
+   title='BUILD YOUR PLAYER';desc='Tap all three skills to complete the player card.';
+   buttons=['TEAMWORK','SKILL','ATTITUDE'].map(x=>`<button class="game-btn" onclick="collectSkill(this)">${x} +</button>`).join('');
+ }else if(current===4){
+   title='WEEKEND FIXTURE';desc='Choose two activities for your weekend game plan.';
+   buttons=['FAMILY TIME','REST & RECHARGE','LITTLE ADVENTURE'].map(x=>`<button class="game-btn" onclick="collectWeekend(this)">${x}</button>`).join('');
+ }else{
+   title='CARE PACKAGE QUEST';desc='Collect all six care items to complete the final challenge.';
+   buttons=['🍳 BREAKFAST','🍱 LUNCH','🍲 DINNER','💧 WATER','💤 REST','🤍 TAKE CARE'].map(x=>`<button class="game-btn" onclick="collectCare(this)">${x}</button>`).join('');
+ }
+ zone.innerHTML=`<div class="game-top"><div><div class="game-tag">MINI GAME · CHALLENGE ${String(step+1).padStart(2,'0')}</div><div class="game-title">${title}</div></div><div class="minute">${current===0?'PENALTY':current===3?'PLAYER BUILD':current===5?'COLLECT':'CHALLENGE'}</div></div><p class="game-desc">${desc}</p><div class="game-buttons">${buttons}</div><div class="game-status" id="game-status">${current===3?'0 / 3 skills collected':current===4?'0 / 2 activities selected':current===5?'0 / 6 items collected':'Complete the challenge to unlock the next message.'}</div><div class="game-progress"><span id="game-bar"></span></div><div class="unlock-note">COMPLETE THE MINI GAME TO UNLOCK THE NEXT MESSAGE</div>`;
+}
+function gameWon(message){
+ gameComplete=true;
+ const status=document.getElementById('game-status');if(status)status.textContent=message||'CHALLENGE COMPLETE! Next message unlocked.';
+ const bar=document.getElementById('game-bar');if(bar)bar.style.width='100%';
+ const btn=document.getElementById('next-btn');if(btn){btn.disabled=false;btn.textContent=step===chapters[current].parts.length-1?'FINISH CHAPTER ✓':'UNLOCK NEXT MESSAGE →';}
+}
+function penalty(choice,target,btn){
+ if(choice===target){btn.classList.add('correct');const ball=document.getElementById('kickball');if(ball)ball.classList.add('go');gameWon('GOOOAAALLL! Perfect shot. The next message is unlocked.')}
+ else{document.getElementById('game-status').textContent='Saved by the goalkeeper! Try another corner.'}
+}
+function simpleGame(ok,btn,message){
+ if(ok){btn.classList.add('correct');gameWon(message)}else{document.getElementById('game-status').textContent='Not quite! Think about the message and try again.'}
+}
+function collectSkill(btn){
+ if(!btn.classList.contains('correct')){btn.classList.add('correct');gameCount++}
+ document.getElementById('game-status').textContent=gameCount+' / 3 skills collected';
+ document.getElementById('game-bar').style.width=(gameCount/3*100)+'%';
+ if(gameCount===3)gameWon('PLAYER CARD COMPLETE! All skills collected.');
+}
+function collectWeekend(btn){
+ if(!btn.classList.contains('correct')){btn.classList.add('correct');gameCount++}
+ document.getElementById('game-status').textContent=gameCount+' / 2 activities selected';
+ document.getElementById('game-bar').style.width=(gameCount/2*100)+'%';
+ if(gameCount>=2)gameWon('WEEKEND PLAN READY! Enjoy your time off.');
+}
+function collectCare(btn){
+ if(!btn.classList.contains('correct')){btn.classList.add('correct');gameCount++}
+ document.getElementById('game-status').textContent=gameCount+' / 6 care items collected';
+ document.getElementById('game-bar').style.width=(gameCount/6*100)+'%';
+ if(gameCount===6)gameWon('CARE PACKAGE COMPLETE! Final message unlocked.');
+}
+function escapeHTML(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;')}
+function nextPart(){
+ if(!gameComplete)return;
+ const c=chapters[current];
+ if(step<c.parts.length-1){step++;renderChapter();document.getElementById('chapter-content').scrollIntoView({behavior:'smooth',block:'nearest'});}
+ else{
+   const btn=document.getElementById('next-btn');
+   btn.textContent='CHAPTER COMPLETE ✓';btn.disabled=true;btn.style.opacity='.65';
+   const status=document.getElementById('game-status');if(status)status.textContent='FULL TIME! You completed this chapter. Choose the next chapter from the match menu.';
+   document.querySelectorAll('.chapter')[current].classList.add('done');
+ }
+}
+</script>
+</body>
+</html>
